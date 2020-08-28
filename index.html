@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>VueJS Practice XD</title>
+</head>
+<body>
+
+    <!-- .navbar-container -->
+    <div class="container d-flex text-center">
+        <img class="covid19" src="covid19.png" alt="covid-19 image">
+        <h3 class="project-name text-light">COVID-19 <span class="statistics">Statistics</span></h3>
+    </div>
+    <div class="container mt-2" id="data-container">
+         <!------- PH DATA -------->
+        <div class="alert p-2 bg-danger text-light"><i class="fas fa-exclamation-triangle mr-2"></i>COVID-19 Alert! Warning - Level 3, Avoid Nonessential Travel</div>
+        <div class="ph_header">
+            <div>
+                <a class="ml-auto" href="https://www.cdc.gov/coronavirus/2019-ncov/index.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2Fnovel-coronavirus-2019.html" target="_blank">
+                Read article about covid-19 here</a>
+            </div>
+            <div class="d-flex align-items-center">
+                <h2 class="header text-light">Philippines</h2>
+                <img class="ph_flag ml-2" src="https://disease.sh/assets/img/flags/ph.png" alt="flag">
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body p-2">
+                        <p class="card-title text-danger">Total Cases</p>
+                        <h3 class="data text-center text-light p-4">{{ph_data.totalCases}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body p-2">
+                        <p class="card-title text-warning">Active</p>
+                        <h3 class="data text-center text-light p-4">{{ph_data.active}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body p-2">
+                        <p class="card-title text-muted">Deaths</p>
+                        <h3 class="data text-center text-light p-4">{{ph_data.deaths}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body p-2">
+                        <p class="card-title text-primary">Recovered</p>
+                        <h3 class="data text-center text-light p-4">{{ph_data.recovered}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!------- GLOBAL DATA -------->
+
+        <div class="global_header mt-5">
+            <div>
+                <h2 class="header text-light">Global</h>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body p-2">
+                            <p class="card-title text-danger">Total Cases</p>
+                            <h3  class="text-center text-light p-4">{{global_data.totalCases}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body p-2">
+                            <p class="card-title text-warning">Active</p>
+                            <h3 class="text-center text-light p-4">{{global_data.active}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body p-2">
+                            <p class="card-title text-muted">Deaths</p>
+                            <h3 class="text-center text-light p-4">{{global_data.deaths}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body p-2">
+                            <p class="card-title text-primary">Recovered</p>
+                            <h3 class="text-center text-light p-4">{{global_data.recovered}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table text-light">
+            <h2 class="mt-5 text-light">Top 10 Countries</h2>
+            <thead>
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Country</th>
+                <th scope="col">Total Cases</th>
+                <th scope="col">Deaths</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td><img v-bind:src="countries.country[0]" v-bind:title="countries.countryName[0]"></td>
+                <!-- <td>{{countries.countryName[0]}}</td> -->
+                <td>{{countries.country_totalCases[0]}}</td>
+                <td>{{countries.country_deaths[0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td><img v-bind:src="countries.country[1]" v-bind:title="countries.countryName[1]"></td>
+                <!-- <td>{{countries.countryName[1]}}</td> -->
+                <td>{{countries.country_totalCases[1]}}</td>
+                <td>{{countries.country_deaths[1]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td><img v-bind:src="countries.country[2]" v-bind:title="countries.countryName[2]"></td>
+                <!-- <td>{{countries.countryName[2]}}</td> -->
+                <td>{{countries.country_totalCases[2]}}</td>
+                <td>{{countries.country_deaths[2]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td><img v-bind:src="countries.country[3]" v-bind:title="countries.countryName[3]"></td>
+                <!-- <td>{{countries.countryName[3]}}</td> -->
+                <td>{{countries.country_totalCases[3]}}</td>
+                <td>{{countries.country_deaths[3]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td><img v-bind:src="countries.country[4]" v-bind:title="countries.countryName[4]"></td>
+                <!-- <td>{{countries.countryName[4]}}</td> -->
+                <td>{{countries.country_totalCases[4]}}</td>
+                <td>{{countries.country_deaths[4]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td><img v-bind:src="countries.country[5]" v-bind:title="countries.countryName[5]"></td>
+                <!-- <td>{{countries.countryName[5]}}</td> -->
+                <td>{{countries.country_totalCases[5]}}</td>
+                <td>{{countries.country_deaths[5]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td><img v-bind:src="countries.country[6]" v-bind:title="countries.countryName[6]"></td>
+                <!-- <td>{{countries.countryName[6]}}</td> -->
+                <td>{{countries.country_totalCases[6]}}</td>
+                <td>{{countries.country_deaths[6]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td><img v-bind:src="countries.country[7]" v-bind:title="countries.countryName[7]"></td>
+                <!-- <td>{{countries.countryName[7]}}</td> -->
+                <td>{{countries.country_totalCases[7]}}</td>
+                <td>{{countries.country_deaths[7]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td><img v-bind:src="countries.country[8]" v-bind:title="countries.countryName[8]"></td>
+                <!-- <td>{{countries.countryName[8]}}</td> -->
+                <td>{{countries.country_totalCases[8]}}</td>
+                <td>{{countries.country_deaths[8]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">10</th>
+                <td><img v-bind:src="countries.country[7]" v-bind:title="countries.countryName[9]"></td>
+                <!-- <td>{{countries.countryName[9]}}</td> -->
+                <td>{{countries.country_totalCases[9]}}</td>
+                <td>{{countries.country_deaths[9]}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    </div>
+    <div class="container footer text-center mb-3">
+        <h5>
+        <a class="developer text-light" href="https://lehibonafe.github.io/" target="_blank">Developed by: Lehi Bonafe</a>
+        <a class="github text-light ml-2" href="https://github.com/lehibonafe/covid19-app" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+        </h5>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="script.js"></script>
+</body>
+</html>

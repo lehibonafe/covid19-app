@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background: #121212;
+}
+
+.covid19 {
+  margin-top: 1em;
+  width: 3.5em;
+  height: 3.5em;
+  margin-right: 1em;
+}
+
+.statistics {
+  color: #cd0a0a !important;
+}
+
+.alert {
+  max-width: 500px;
+  -webkit-animation-name: blink;
+          animation-name: blink;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.navbar-container .covid19 {
+  width: 70px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.ph_flag {
+  width: 55px;
+  height: 30px;
+}
+
+.card {
+  margin-top: 10px;
+  background: #333;
+}
+
+.table {
+  background: #333;
+}
+
+.table img {
+  width: 50px;
+  height: 30px;
+}
+
+.footer .developer {
+  text-decoration: none;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .ph_header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+/*# sourceMappingURL=style.css.map */
