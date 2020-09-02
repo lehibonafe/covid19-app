@@ -1,15 +1,11 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 html {
   font-size: 100%;
-}
-
-body {
-  background: #121212;
 }
 
 .covid19 {

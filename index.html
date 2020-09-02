@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="icon" href="covid19.ico">
     <link rel="stylesheet" href="style.css">
@@ -16,7 +16,7 @@
     <!-- .navbar-container -->
     <div class="container d-flex text-center">
         <img class="covid19" src="covid19.png" alt="covid-19 image">
-        <h3 class="project-name text-light">COVID-19 <span class="statistics">Statistics</span></h3>
+        <h3 class="project-name">COVID-19 <span class="statistics">Statistics</span></h3>
     </div>
     <div class="container mt-2" id="data-container">
          <!------- PH DATA -------->
@@ -27,7 +27,7 @@
                 Read article about covid-19 here</a>
             </div>
             <div class="d-flex align-items-center">
-                <h2 class="header text-light">Philippines</h2>
+                <h2 class="header">Philippines</h2>
                 <img class="ph_flag ml-2" src="https://disease.sh/assets/img/flags/ph.png" alt="flag">
             </div>  
         </div>
@@ -70,7 +70,7 @@
 
         <div class="global_header mt-5">
             <div>
-                <h2 class="header text-light">Global</h>
+                <h2 class="header">Global</h>
             </div>
             <div class="row">
                 <div class="col-md-3">
@@ -109,7 +109,7 @@
         </div>
 
         <table class="table text-light">
-            <h2 class="mt-5 text-light">Top 10 Countries</h2>
+            <h2 class="mt-5">Top 10 Countries</h2>
             <thead>
               <tr>
                 <th scope="col">No.</th>
@@ -194,13 +194,16 @@
     </div>
 
     </div>
+
     <div class="container footer text-center mb-3">
         <h5>
-        <a class="developer text-light" href="https://lehibonafe.github.io/" target="_blank">Developed by: Lehi Bonafe</a>
-        <a class="github text-light ml-2" href="https://github.com/lehibonafe/covid19-app" target="_blank"><i class="fab fa-github"></i></a>
+        <a class="developer" href="https://lehibonafe.github.io/" target="_blank">Developed by: Lehi Bonafe</a>
+        <a class="github ml-2" href="https://github.com/lehibonafe/covid19-app" target="_blank"><i class="fab fa-github"></i></a>
         </h5>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="vue.js"></script>
+    <script src="chart.js"></script>
 </body>
 </html>
